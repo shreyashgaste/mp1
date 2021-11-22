@@ -186,7 +186,7 @@ return (
                     </div>
 
                     <div className="text">
-                        <h3>return to <a href="/Home">Home</a></h3>
+                        <h3>return to <a href="/">Home</a></h3>
                     </div>
                 </form>
             </div>

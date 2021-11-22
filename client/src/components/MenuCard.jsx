@@ -13,6 +13,12 @@ const MenuCard = ({ filterid, menuData }) => {
   let navigate = useNavigate();
   const handleElement = (e, curElem) => {
     e.preventDefault();
+    const email = sessionStorage.getItem("userEmail");
+    if(!email)
+    {
+      alert("Please Log In First...");
+      return;
+    }
     console.log("Shreyash");
     // console.log(curElem);
     navigate(`/feature/${curElem.id}`);
@@ -39,7 +45,7 @@ const MenuCard = ({ filterid, menuData }) => {
                         className="card-read"
                         onClick={(e) => handleElement(e, curElem)}
                       >
-                        Read More{" "}
+                        Read More
                       </button>
                       {/* <div className="card-read"> <a href="#">More</a>onClick={e=>handleDetails(e,curElem)} </div> */}
                     </div>

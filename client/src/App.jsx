@@ -20,7 +20,7 @@ import Signup from "./components/Signup";
 import Errorpage from "./components/Errorpage";
 import Feature from "./components/Feature";
 import Compare from "./components/Compare.jsx";
-
+import Logout from "./components/logout";
 import { initialState, reducer } from "./reducer/UseReducer";
 // import Table from './components/table/Table';
 
@@ -39,6 +39,7 @@ const Routing = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/feature/:id" element={<Feature />} />
+      <Route path="/logout" element={<Logout />} />
       {/* <Route path="/table" element={<Table/>}/> */}
       <Route path="*" element={<Errorpage />} />
 

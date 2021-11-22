@@ -128,7 +128,7 @@ router.get("/about", (req, res) => {
 router.get("/logout", (req, res) => {
   console.log("hello about page");
   res.clearCookie("jwtoken", { path: "/" });
-  res.status(200).send("looged out");
+  res.status(200).send("logged out");
 });
 
 module.exports = router;

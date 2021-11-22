@@ -1,12 +1,12 @@
-import React, { useContext,useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { UserContext } from '../App';
 const Logout = () =>{
-    const {state, dispatch} = useContext(UserContext);
     const history = useNavigate();
     // promises
     useEffect(()=>{
-        fetch('http://localhost:5000/logout',{
+        const makeLogout = async()=>{
+        await fetch('http://localhost:5000/logout',{
             method:"GET",
             headers:{
                 Accept:"application/json",
@@ -14,8 +14,7 @@ const Logout = () =>{
                 credentials:"include"
             }
         }).then((res)=>{
-            dispatch({type:"USER", payload:false});
-            history('/login',{replace:true});
+            history('/',{replace:true});
             if(!res.status === 200)
             {
                 const error = new Error(res.error);
@@ -24,13 +23,16 @@ const Logout = () =>{
         }).catch((err)=>{
             console.log(err);
         })
-        sessionStorage.clear();
-    })
-
+        await sessionStorage.clear();
+        await sessionStorage.removeItem("userEmail");
+        };
+        makeLogout();
+    }, []);
+    
 return(
 
     <>
-    <h2>Logout successfully</h2>
+
     </>
 )
 }

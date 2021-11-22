@@ -20,11 +20,14 @@ const Login = () => {
 
         const data = await res.json();
         console.log(data);
+        console.log(data.name);
         if(res.status === 400 || !data){
             window.alert("Invalid credentilas");
 
         }else{
             sessionStorage.setItem("userEmail", email);
+            sessionStorage.setItem("name", data.name);
+            sessionStorage.setItem("phone", data.phone);
             // dispatch({type:'USER', payload:true});
             window.alert("login successful");
             console.log("login successful");

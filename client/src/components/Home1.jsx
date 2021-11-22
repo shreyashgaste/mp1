@@ -35,7 +35,7 @@ function Homepage1({ filterid }) {
 
                         <a href="/home1" class="active">Home</a>
                         <a href="/compare">Compare</a>
-                        <a href="/contact">Contact</a>
+                        <a href="/about">Profile</a>
                         <a href="/logout">Logout</a>
                         
                     </div>

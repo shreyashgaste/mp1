@@ -11,8 +11,8 @@ const Navbar1 = () => {
 
                     <a href="/home1" >Home</a>
                     <a href="/compare" class="active">Compare</a>
-                    <a href="/contact">Contact</a>
-                    <a href="/">Logout</a>
+                    <a href="/about">Profile</a>
+                    <a href="/logout">Logout</a>
                     
                 </div>
                 

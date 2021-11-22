@@ -42,7 +42,9 @@ header {
 
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {
-    display: none;
+    /* display: none; */
+    font-size: medium;
+    padding: 18px 10px;
   }
   .topnav a.icon {
     float: right;

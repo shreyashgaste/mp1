@@ -277,3 +277,12 @@ h3 {
     /* background-image: url(https://images.pexels.com/photos/101841/pexels-photo-101841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); */
   }
   
+  .customButton{
+    height: 100px;
+    width: 50px;
+    font-size: 50px;
+  }
+
+  .customSpan {
+    padding-left: 20px;
+  }

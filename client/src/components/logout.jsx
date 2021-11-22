@@ -14,7 +14,7 @@ const Logout = () =>{
                 credentials:"include"
             }
         }).then((res)=>{
-            history('/',{replace:true});
+            
             if(!res.status === 200)
             {
                 const error = new Error(res.error);
@@ -25,6 +25,7 @@ const Logout = () =>{
         })
         await sessionStorage.clear();
         await sessionStorage.removeItem("userEmail");
+        history('/',{replace:true});
         };
         makeLogout();
     }, []);

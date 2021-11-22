@@ -47,6 +47,46 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.post("/favourites", async (req, res) => {
+  const { id, email } = req.body;
+  console.log(id);
+  try {
+    const record = await User.count({ email: email, favourited: {$in:[id]} });
+
+    if (record == 0) {
+      const r = await User.updateOne(
+        { email: email },
+        { $push: { favourited: id } }
+        
+      );
+      return res.json({effect: record});
+    }
+    else{
+      const r = await User.updateOne(
+        { email: email },
+        { $pull: { favourited: id } })
+        return res.json({effect: record});
+    }
+  } catch (err) {
+    console.log(err);
+  }
+  res.json({message: "Updated"});
+});
+
+
+router.post("/checkfavourites", async (req, res) => {
+  const { id, email } = req.body;
+  console.log(id);
+  try {
+    const record = await User.count({ email: email, favourited: {$in:[id]} });
+
+    return res.json({effect: record});
+  } catch (err) {
+    console.log(err);
+  }
+  res.json({message: "Updated"});
+});
+
 router.post("/contact", async (req, res) => {
   const { name, email, phone, message } = req.body;
 
@@ -80,17 +120,21 @@ router.post("/signin", async (req, res) => {
     }
 
     const userLogin = await User.findOne({ email: email, password: password });
-
+    const { name, phone } = userLogin;
+    console.log(email);
+    console.log(name);
+    console.log(phone);
+    
     if (userLogin) {
       token = await userLogin.generateAuthToken();
-    //   console.log(token);
+      //   console.log(token);
       res.cookie("jwtoken", token, {
         expires: new Date(Date.now + 1800000),
         httpOnly: true,
       });
 
       if (token) {
-        res.json({ message: "logged in successfully" });
+        res.json({ message: "logged in successfully", email: email, name: name, phone: phone });
       }
     } else {
       res.status(400).json({ error: "invalid credentials" });
@@ -105,19 +149,23 @@ router.post("/rating", async (req, res) => {
   const { email, vehicleId, givenRating } = req.body;
   console.log(email, vehicleId, givenRating);
   const userRating = await User.findOne({ email: email });
-//   console.log(userRating);
-  if(userRating)
-  {
-    try{
-        const p = await User.updateOne({email : email},{$pull:{rating:{id: vehicleId}}});
-        const r = await User.updateOne({email : email},{$push:{rating:{id: vehicleId, rate: givenRating}}});
-        console.log(r);
-      }catch(err){
-        console.log(err);
-        res.status(422).json({error : "Plz fill the field properly"});
-      }
+  //   console.log(userRating);
+  if (userRating) {
+    try {
+      const p = await User.updateOne(
+        { email: email },
+        { $pull: { rating: { id: vehicleId } } }
+      );
+      const r = await User.updateOne(
+        { email: email },
+        { $push: { rating: { id: vehicleId, rate: givenRating } } }
+      );
+      console.log(r);
+    } catch (err) {
+      console.log(err);
+      res.status(422).json({ error: "Plz fill the field properly" });
+    }
   }
-  
 });
 
 router.get("/about", (req, res) => {

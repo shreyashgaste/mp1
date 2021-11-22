@@ -31,6 +31,7 @@ const userSchema = new mongoose.Schema({
       rate: { type: Number },
     },
   ],
+  favourited: { type: [Number] },
   // cpassword:{
   //     type:String,
   //     required:true

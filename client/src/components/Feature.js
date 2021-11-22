@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect,useState } from "react";
+import { useNavigate,useParams } from "react-router-dom";
 import Menu from "./MenuApi";
 import RatingPage from "./RatingPage";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -10,12 +10,11 @@ const Navbar1 = () => {
     <>
       <header>
         <div class="topnav" id="myTopnav">
-          <a href="/home1">
-            Home
-          </a>
+          <a href="/home1">Home</a>
 
           <a href="/compare">Compare</a>
-          <a href="/">Logout</a>
+          <a href="/contact">Contact</a>
+          <a href="/logout">Logout</a>
         </div>
       </header>
     </>
@@ -23,6 +22,8 @@ const Navbar1 = () => {
 };
 
 const Feature = () => {
+  const history = useNavigate();
+  const [fav, setFav] = useState(false);
   const { id } = useParams();
   console.log(id);
   let curElem = {};
@@ -33,12 +34,73 @@ const Feature = () => {
       break;
     }
   }
+
+  useEffect(()=>{
+    const makeFav=async()=>{
+      const email = await sessionStorage.getItem("userEmail");
+      const res = await fetch("http://localhost:5000/checkfavourites", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          email,
+        }),
+      });
+  
+      const data = await res.json();
+      console.log("He",data.effect);
+      if(data.effect == 1)
+      {
+        setFav(true);
+      }
+      if(data.effect == 0)
+      {
+        setFav(false);
+      }
+    }
+    makeFav();
+  }, [])
+  const addToFavourite = async (e) => {
+    const email = await sessionStorage.getItem("userEmail");
+    const res = await fetch("http://localhost:5000/favourites", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id,
+        email,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data.effect);
+    if(data.effect == 1)
+    {
+      setFav(false);
+    }
+    if(data.effect == 0)
+    {
+      setFav(true);
+    }
+  };
+
   return (
     <>
       <Navbar1 />
 
       <div className="feature-wrapper">
-        <h1 align="center">{curElem.name}</h1>
+        <h1 align="center">{curElem.name} <span  className="customSpan">{fav ? <button className="customButton"
+          onClick={(e) => addToFavourite(e)}
+        >
+          🧡
+        </button> : <button className="customButton"
+          onClick={(e) => addToFavourite(e)}
+        >
+          🤍
+        </button>}</span></h1>
         {/* <div
             className="gallery js-flickity"
             data-flickity-options='{ "wrapAround": true }'
@@ -163,8 +225,20 @@ const Feature = () => {
       <hr />
       <br />
       <br />
-      <h2 style={{textAlign: "center"}}>Rate this vehicle...</h2>
-      <RatingPage vehicleId={id}/>
+      <h2 style={{ textAlign: "center" }}>Rate this vehicle...</h2>
+      <RatingPage vehicleId={id} />
+      <div style={{textAlign: "center"}}>
+        {fav ? <button className="customButton"
+          onClick={(e) => addToFavourite(e)}
+        >
+          🧡
+        </button> : <button className="customButton"
+          onClick={(e) => addToFavourite(e)}
+        >
+          🤍
+        </button>}
+        
+      </div>
     </>
   );
 };

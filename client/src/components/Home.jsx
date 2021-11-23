@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/style.css";
 import Menu from "./MenuApi";
 import MenuCard from "./MenuCard.jsx";
 import Navbar from "./Navbar.jsx";
+import { useNavigate } from "react-router-dom";
 
 const uniqueList = [
   ...new Set(
@@ -14,8 +15,10 @@ const uniqueList = [
 ];
 
 function Homepage({ filterid }) {
+  const navigate = useNavigate();
   const [menuData, setMenuData] = useState(Menu);
   const [menuList, setmenuList] = useState(uniqueList);
+  
   const filterItem = (category) => {
     if (category === "All") {
       setMenuData(Menu);
@@ -26,6 +29,18 @@ function Homepage({ filterid }) {
     });
     setMenuData(updatedList);
   };
+  useEffect(() => {
+    const checkSession = async()=>{
+      const email = await sessionStorage.getItem("userEmail");
+      console.log(email);
+      if(!email)
+      {
+        console.log("Hello invalid");
+        navigate("/");
+      }
+    }
+    checkSession();
+  }, [])
 
   const Navbar1 = () => {
     return (
@@ -53,8 +68,6 @@ function Homepage({ filterid }) {
 
   return (
     <>
-      {/* <h1>MyEV</h1> */}
-      {/* <Navbar1/> */}
       <Navbar1 />
       <Navbar filterItem={filterItem} menuList={menuList} />
 

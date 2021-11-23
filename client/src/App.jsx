@@ -10,7 +10,6 @@ import "./css/map1.css";
 import "./css/compare.css";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Navbar1 from './components/Navbar1';
 import Home from "./components/Home";
 import Home1 from "./components/Home1";
 import About from "./components/About";
@@ -23,7 +22,6 @@ import Compare from "./components/Compare.jsx";
 import Logout from "./components/logout";
 import Favourites from "./components/Favourites";
 import { initialState, reducer } from "./reducer/UseReducer";
-// import Table from './components/table/Table';
 
 export const UserContext = createContext();
 const Routing = () => {
@@ -31,7 +29,6 @@ const Routing = () => {
 
   return (
     <Routes>
-      {/* <Switch> */}
       <Route exact path="/" element={<Home />} />
       <Route exact path="/home1" element={<Home1 />} />
       <Route path="/about" element={<About />} />
@@ -42,10 +39,7 @@ const Routing = () => {
       <Route path="/feature/:id" element={<Feature />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/favourites" element={<Favourites />} />
-      {/* <Route path="/table" element={<Table/>}/> */}
       <Route path="*" element={<Errorpage />} />
-
-      {/* </Switch> */}
     </Routes>
   );
 };

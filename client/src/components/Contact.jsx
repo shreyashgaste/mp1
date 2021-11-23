@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navbar1 = () => {
@@ -10,9 +10,7 @@ const Navbar1 = () => {
           <a href="/contact" class="active">
             Contact
           </a>
-          <a href="/about">
-            Profile
-          </a> 
+          <a href="/about">Profile</a>
           <a href="/logout">Log out</a>
         </div>
       </header>
@@ -22,6 +20,17 @@ const Navbar1 = () => {
 
 const Contact = () => {
   const history = useNavigate();
+  useEffect(() => {
+    const checkSession = async()=>{
+      const email = await sessionStorage.getItem("userEmail");
+      console.log(email);
+      if(!email)
+      {
+        history("/");
+      }
+    }
+    checkSession();
+  }, [])
   const [user, setUser] = useState({
     name: "",
     email: "",

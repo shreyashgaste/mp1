@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import ReactDOM from 'react-dom';
-
 import { useNavigate } from "react-router-dom";
 
 const Navbar1 = () => {
@@ -13,7 +11,6 @@ const Navbar1 = () => {
           <a href="/contact" class="active">
             Profile
           </a>
-
           <a href="/logout">Log out</a>
         </div>
       </header>
@@ -22,10 +19,20 @@ const Navbar1 = () => {
 };
 
 const About = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const checkSession = async()=>{
+      const email = await sessionStorage.getItem("userEmail");
+      console.log(email);
+      if(!email)
+      {
+        console.log("Invalid User");
+        navigate("/");
+      }
+    }
+    checkSession();
+  }, [])
   const history = useNavigate();
-  // const initialData = {name:"Dattatray",phone:"9325924492",email:"dattareve@gmail"};
-
- 
   return (
     <>
       <Navbar1 />
@@ -48,12 +55,14 @@ const About = () => {
               <b>Email: </b>
               <i> {sessionStorage.getItem("phone")}</i>
               <br />
-              
             </form>
             <br />
-            <button className="card-read" onClick={(e) => history("/favourites/")}>
-                Show Favourites
-              </button>
+            <button
+              className="card-read"
+              onClick={(e) => history("/favourites/")}
+            >
+              Show Favourites
+            </button>
           </div>
         </div>
         <form />

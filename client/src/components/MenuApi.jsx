@@ -27,6 +27,9 @@ const Menu = [
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15296351.192899143!2d67.99536267469738!3d20.61006856684401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1srevolt%20rv%20400%20%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797647023!5m2!1sen!2sin",
     other_features:
       "Mobile app connectivity, 4G connectivity, GPS & Navigation, Digital touch screen display",
+    description:
+      "The Revolt RV400 is powered by 3000 W Mid Drive Motor. The Revolt RV400 takes 4.5 Hours to get fully charged its 72 V, 3.24 KWh battery and has a claimed range of 85 km/charge . The Price of Revolt RV400 starts at Rs 90.799 K  It is available in one variants, STD.",
+  
   },
   {
     id: 18,
@@ -51,7 +54,10 @@ const Menu = [
     fast_charging: "Yes",
     charging_time: "1.5hrs for fast charging & 5hrs for normal charging",
     torque: "450Nm",
+    top_speed:"147 kmph",
+    load_capacity:"-",
     other_features: " colourful TFT display with smartphone connectivity",
+    gmap:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5578.831576967385!2d77.63820226981841!3d12.95434584871013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159feb2cc50b%3A0x3421bfc459b134d!2sUltraviolette%20Automotive%20Pvt%20Ltd%20-%20R%26D%20Center!5e0!3m2!1sen!2sin!4v1637669486887!5m2!1sen!2sin",
     description:
       "The F77 electric bike is powered by a monstrous 25 kW electric motor which is equivalent to 33.5 bhp. The powertrain is equivalent to the power output of BMW G310R and is more powerful than the KTM Duke 250 that outputs around 30 bhp. With these numbers at hand, the F77 is clearly the most powerful electric bike in India as of now.",
   },
@@ -85,6 +91,7 @@ const Menu = [
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11029961.885932364!2d72.48672531199188!3d17.35017452492591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sola%20electric%20service%20stations!5e0!3m2!1sen!2sin!4v1636797422068!5m2!1sen!2sin",
     other_features:
       "Mobile app connectivity, 4G connectivity, GPS & Navigation, Digital touch screen display",
+      description:"The Ola S1 is one of the 1 different products from Ola Electric on sale in India. It has a starting price of Rs 85099 and comes in 2 different versions. The Ola S1 generates a max power of 5500 W along with a peak torque of 58 Nm. Some of the main rivals include the Suzuki Access 125 and Honda Activa 125"
   },
   {
     id: 3,
@@ -113,6 +120,7 @@ const Menu = [
     load_capacity: "120 kg",
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15395929.082069235!2d67.4539896679268!3d19.59427708862153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sampere%20reo%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797692272!5m2!1sen!2sin",
     other_features: "Digital speedometer ",
+    description:"The Ampere Reo is one of the 5 different products from Ampere on sale in India. It has a starting price of Rs 43490 and comes in 3 different versions. The Ampere Reo generates a max power of 1200 W along with a peak torque of 16 Nm @ 420 rpm and the engine is mated to a Automatic speed gearbox. Some of the main rivals include the TVS XL 100 and Hero Electric Flash"
   },
   {
     id: 4,
@@ -141,6 +149,7 @@ const Menu = [
     load_capacity: "150 kg",
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15438389.455630794!2d67.44939278093906!3d19.145433464629498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shero%20electric%20optima%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797733711!5m2!1sen!2sin",
     other_features: "	USB charging port, Digital Speedometer",
+    description:"The Hero Electric Optima is one of the 6 different products from Hero Electric on sale in India. It has a starting price of Rs 51440 and comes in 4 different versions. The Hero Electric Optima generates a max power of 250 W. Some of the main rivals include the Hero Electric Flash and Hero Electric Dash"
   },
   {
     id: 5,
@@ -169,6 +178,7 @@ const Menu = [
     load_capacity: "150 kg",
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15438389.455630794!2d67.44939278093906!3d19.145433464629498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shero%20electric%20optima%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797733711!5m2!1sen!2sin",
     other_features: "	USB charging port, Digital Speedometer",
+    description:"Hero Electric Optima HX is an electric scooter available at a starting price of Rs. 55,719 in India. It is available in 2 variants and 4 colours with top variant price starting from Rs. 65,779. Hero Electric Optima HX generates 550 W power from its motor. With both front and rear drum brakes, Hero Electric Optima HX comes up with combined braking system of both wheels."
   },
   {
     id: 6,
@@ -197,6 +207,7 @@ const Menu = [
     load_capacity: "150 kg",
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15438389.455630794!2d67.44939278093906!3d19.145433464629498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shero%20electric%20optima%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797733711!5m2!1sen!2sin",
     other_features: "Digital Speedometer",
+    description:"Hero Electric Photon is an electric scooter available at a starting price of Rs. 74,473 in India. It is available in only 1 variant and 5 colours. Hero Electric Photon generates 1200 W power from its motor. With front disc and rear drum brakes, Hero Electric Photon comes up with combined braking system of both wheels."
   },
   {
     id: 7,
@@ -226,6 +237,7 @@ const Menu = [
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15518147.53298254!2d67.44020271500183!3d18.27368065696108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1srevolt%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797787171!5m2!1sen!2sin",
     other_features:
       "Mobile app connectivity, 4G connectivity, GPS & Navigation, Digital touch screen display",
+      description:"Based on the RV 400, Revolt Motors has also introduced its scaled-down version in the form of the RV 300. Available in only one variant, the RV 300 follows a similar design language like its elder sibling following the same street bike stance. The RV 300 is available with the choice of two colour shades, Smokey Grey and Neon Black."
   },
   {
     id: 8,
@@ -255,6 +267,7 @@ const Menu = [
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15555558.560213715!2d67.43560978342451!3d17.85064169536075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sbajaj%20chetak%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797839559!5m2!1sen!2sin",
     other_features:
       "	Mobile app connectivity, 4G connectivity, GPS & Navigation, Digital touch screen display",
+      description:"Bajaj Chetak is an electric scooter available at a starting price of Rs. 1,37,845 in India. It is available in 2 variants and 6 colours with top variant price starting from Rs. 1,38,992. Bajaj Chetak generates 3800 W power from its motor. With front disc and rear drum brakes, Bajaj Chetak comes up with combined braking system of both wheels "
   },
   {
     id: 9,
@@ -284,6 +297,7 @@ const Menu = [
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15591398.649653228!2d67.43101838675034!3d17.436063448046163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sather%20450x%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636797875207!5m2!1sen!2sin",
     other_features:
       "	Mobile app connectivity, 4G connectivity, GPS & Navigation, Digital touch screen display",
+      description:"Ather 450X is an electric scooter available at a starting price of Rs. 1,39,875 in India. It is available in 2 variants and 3 colours with top variant price starting from Rs. 1,58,887. Ather 450X generates 3300 W power from its motor. With both front and rear disc brakes, Ather 450X comes up with combined braking system of both wheels."
   },
   {
     id: 10,
@@ -313,6 +327,7 @@ const Menu = [
     gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11733771.518634688!2d69.33305647473043!3d9.425635560180451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae2361a0a89abd%3A0xe2c884c63dc214e1!2sSimpleEnergy%20Pvt%20Ltd.!5e0!3m2!1sen!2sin!4v1636797981952!5m2!1sen!2sin",
     other_features:
       "	Mobile app connectivity, 4G connectivity, GPS & Navigation, Digital touch screen display",
+      description:"Simple Energy One is an electric scooter available at a starting price of Rs. 1,09,000 in India. It is available in only 1 variant and 4 colours. Simple Energy One generates 4500 W power from its motor. With both front and rear disc brakes, Simple Energy One comes up with combined braking system of both wheels."
   },
   {
     id: 11,
@@ -341,6 +356,7 @@ const Menu = [
     load_capacity: "150 kg",
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d16127283.960307762!2d69.33071342641524!3d9.304427076997507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shero%20electric%20%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636798021363!5m2!1sen!2sin",
     other_features: "Digital Speedometer",
+    description:"Hero Electric Flash is an electric scooter available at a starting price of Rs. 46,659 in India. It is available in 2 variants and 3 colours with top variant price starting from Rs. 58,781. Hero Electric Flash generates 250 W power from its motor. With both front and rear drum brakes, Hero Electric Flash comes up with combined braking system of both wheels."
   },
 
   {
@@ -361,12 +377,14 @@ const Menu = [
     range: "160 km/charge",
     top_speed: "75 kmph",
     battery_type: "Lithium ion",
+    load_capacity:"150kg",
     motor_type: "Hub motor",
     motor_power: "2.5 kw",
     battery_capacity: "3.3 kWh",
     fast_charging: "No",
     charging_time: "4hrs for normal charging",
     torque: "40Nm",
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15497575.278781911!2d70.33536548609376!3d18.502325139867132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sokinava%20india!5e0!3m2!1sen!2sin!4v1637671831602!5m2!1sen!2sin",
     other_features:
       "  fully-digital instrument cluster with Bluetooth connectivity and a smartphone app",
     description:
@@ -396,6 +414,8 @@ const Menu = [
     fast_charging: "No",
     charging_time: "3hrs for normal charging",
     torque: "16Nm",
+    load_capacity:"150kg",
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15497575.278781911!2d70.33536548609376!3d18.502325139867132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sokinava%20india!5e0!3m2!1sen!2sin!4v1637671831602!5m2!1sen!2sin",
     other_features:
       "central locking with anti-theft alarm, keyless entry, find my scooter, geo-fencing, immobilisation, trips data, secure parking, tracking and monitoring, maintenance/insurance reminder, battery information, speed, alerts as well as driver score using mobile app",
     description:
@@ -425,6 +445,8 @@ const Menu = [
     fast_charging: "No",
     charging_time: "4-5hrs for normal charging",
     torque: "16Nm",
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15497575.278781911!2d70.33536548609376!3d18.502325139867132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sokinava%20india!5e0!3m2!1sen!2sin!4v1637671831602!5m2!1sen!2sin",
+    load_capacity:"150kg",
     other_features:
       "push button start, LED headlight, LCD instrument cluster, built-in micro charger with auto cut function",
     description:
@@ -454,6 +476,8 @@ const Menu = [
     fast_charging: "No",
     charging_time: "5-6hrs for normal charging",
     torque: "16Nm",
+    load_capacity:"150kg",
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3942742.916288282!2d75.7822232049965!3d15.194829252022606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sampere%20magnus%20pro%20india!5e0!3m2!1sen!2sin!4v1637672126709!5m2!1sen!2sin",
     other_features:
       "push button start, LED headlight, LCD instrument cluster, built-in micro charger with auto cut function",
     description:
@@ -488,6 +512,7 @@ const Menu = [
     gmap: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d38867066.305453435!2d54.70185712590781!3d-0.533136732299231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stvs%20iqube%20%20electric%20service%20stations%20in%20india!5e0!3m2!1sen!2sin!4v1636798063124!5m2!1sen!2sin",
     other_features:
       "	Mobile app connectivity, 4G connectivity, GPS & Navigation, Digital touch screen display",
+      description:"TVS iQube is an electric scooter available at a starting price of Rs. 1,00,752 in India. It is available in only 1 variant and 1 colour. TVS iQube generates 3000 W power from its motor. TVS iQube comes up with front disc and rear drum brakes."
   },
   {
     id: 13,
@@ -522,7 +547,9 @@ const Menu = [
     motor_type: "Permanent Magnet Synchronous Motor",
     motor_power: "100kw",
     torque: "395 Nm",
-
+    load_capacity:"-",
+    other_features:"The Kona Electric gets a sunroof, auto AC, wireless phone charging, ventilated front seats, rear AC vents, and cruise control. It even comes with a 10-way power-adjustable driver’s seat with lumbar support, 17-inch alloy wheels, LED bi-functional headlamps, LED DRLs, LED tail lamps, and roof rails",
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d121013.15027156069!2d73.73240402724915!3d18.589318478203165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHyundai%20Kona%20Electric%20servioce%20stations!5e0!3m2!1sen!2sin!4v1637672624911!5m2!1sen!2sin",
     description:
       "Hyundai Kona Electric is an Electric suv Car. The electric motor generates a power of 134.14bhp and a torque of 394.91 Nm/40.27kgm. Hyundai Kona Electric is available in Automatic transmission only.",
   },
@@ -555,13 +582,14 @@ const Menu = [
     seating_capacity: "5",
 
     battery_capacity: "30.2Kwh",
-
+    load_capacity:"-",
     fast_charging: "Yes",
 
     charging_time: "60 Min(0-80%)",
 
     torque: "245Nm",
-
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d484084.53121106053!2d73.47510765971099!3d18.57807780766426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stata%20nexon%20servie%20stations!5e0!3m2!1sen!2sin!4v1637672789029!5m2!1sen!2sin",
+    other_features:"Tata offers it with a semi-digital instrument cluster (with a 7-inch TFT display), auto AC, auto headlamps, a sunroof, a 7-inch touchscreen infotainment system, and connected car technology.",
     description:
       "Tata Nexon EV is an Electric suv Car. The electric motor generates a power of 127bhp and a torque of 245nm. Tata Nexon EV is available in Automatic transmission only.",
   },
@@ -594,13 +622,14 @@ const Menu = [
     seating_capacity: "5",
 
     battery_capacity: "44.5kwh",
-
+    load_capacity:"-",
     fast_charging: "Yes",
 
     charging_time: "6-8hrs",
 
     torque: "350Nm",
-
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d60365.28738613545!2d72.80102733784001!3d18.98309341469907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smg%20zs%20%20service%20stations!5e0!3m2!1sen!2sin!4v1637672908524!5m2!1sen!2sin",
+    other_features:"These include an 8-inch infotainment system with Android Auto and Apple CarPlay, a panoramic sunroof, inbuilt air purifier, cruise control, auto AC, projector headlamps, and connected car tech.",
     description:
       "MG ZS EV is an Electric suv Car. The electric motor generates a power of 140.8bhp@3500rpm and a torque of 350Nm@5000rpm. MG ZS EV is available in Automatic transmission only.",
   },
@@ -629,7 +658,7 @@ const Menu = [
     battery_type: "Lithium ion",
     motor_type: "Permanent Magnet Synchronous Motor",
     motor_power: "41.57bhp",
-
+    load_capacity:"-",
     seating_capacity: "5",
     top_speed: "86 kmph",
 
@@ -640,7 +669,8 @@ const Menu = [
     charging_time: "11hours30min(100%) / fast_charging 1h30min(80%)",
 
     torque: "91Nm",
-
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d482922.33708099317!2d72.55589482928667!3d18.983080311382174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smahindra%20e%20verito%20service%20stations!5e0!3m2!1sen!2sin!4v1637673170505!5m2!1sen!2sin",
+    other_features:"These include an 8-inch infotainment system with Android Auto and Apple CarPlay, a panoramic sunroof, inbuilt air purifier, cruise control, auto AC, projector headlamps, and connected car tech",
     description:
       "Mahindra E Verito is an ElectricCar. The electric motor generates a power of 41.57bhp@3500rpm and a torque of 91Nm@3000rpm. Mahindra E Verito is available in Automatic transmission only.",
   },
@@ -677,9 +707,10 @@ const Menu = [
     fast_charging: "Yes",
 
     charging_time: "--",
-
+    load_capacity:"-",
     torque: "170Nm",
-
+    gmap:"https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d484084.53121106053!2d73.47510765971099!3d18.57807780766426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stata%20nexon%20servie%20stations!5e0!3m2!1sen!2sin!4v1637672789029!5m2!1sen!2sin",
+    other_features:"Tata offers it with a semi-digital instrument cluster (with a 7-inch TFT display), auto AC, auto headlamps, a sunroof, a 7-inch touchscreen infotainment system, and connected car technology.",
     description:
       "Tata Tigor EV is an ElectricCar. The electric motor generates a power of 73.75bhp and a torque of 170nm. Tata Tigor EV is available in Automatic transmission only.",
   },
@@ -714,7 +745,10 @@ const Menu = [
     charging_time: "15min for fats charge and 1hr30min with normal charge",
 
     torque: "180Nm",
-
+    load_capacity:"-",
+    gmap:"",
+    other_features:"It gets LED DRLs, LED tail lamps, leather-wrapped seats,  a 10.1-inch rotatable touchscreen, and a CN95 air filtration system.",
+    gmap:"",
     description:
       "The BYD E6 has 1 Electric Engine on offer. It is available with the Automatic transmission. The E6 is a 6 seater",
   },
@@ -749,7 +783,9 @@ const Menu = [
     charging_time: "3hrs",
 
     torque: "90Nm",
-
+    load_capacity:"-",
+    other_features:"It is equipped with keyless entry, power windows, digital driver’s display, a 7-inch infotainment touchscreen, voice and gesture commands, climate control and GPS navigation.",
+    gmap:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5962259.782373604!2d70.51950193156897!3d21.1400653845499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a906aa056a8f%3A0x830226fa57f5c0ad!2sStrom%20Motors%20(E14%20Technologies%20Pvt%20Ltd)!5e0!3m2!1sen!2sin!4v1637673600121!5m2!1sen!2sin",
     description:
       "The price of Strom Motors R3 starts at Rs. 4.50 Lakh and goes upto Rs. 4.50 Lakh. Strom Motors R3 is offered in 1 variants - the base model of R3 is 2-Door and the top variant Strom Motors R3 2-Door which comes at a price tag of Rs. 4.50 Lakh.",
   },

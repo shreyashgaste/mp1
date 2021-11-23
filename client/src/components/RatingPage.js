@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { Container, Radio, Rating } from "./RatingStyles";
+import { useNavigate } from "react-router-dom";
 const RatingPage = ({ vehicleId }) => {
+  const navigate = useNavigate();
   const [rate, setRate] = useState(0);
-
+  useEffect(() => {
+    const checkSession = async()=>{
+      const email = await sessionStorage.getItem("userEmail");
+      console.log(email);
+      if(!email)
+      {
+        console.log("Hello invalid");
+        navigate("/");
+      }
+    }
+    checkSession();
+  }, [])
   const loadData = async (givenRating) => {
     setRate(givenRating);
     // console.log(givenRating);

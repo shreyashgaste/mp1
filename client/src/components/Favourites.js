@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Redirect, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Menu from "./MenuApi";
 
 const Navbar1 = () => {
@@ -46,6 +46,9 @@ const Favourites = () => {
   useEffect(() => {
     const showFav = async () => {
       const email = await sessionStorage.getItem("userEmail");
+      if (!email) {
+        navigate("/");
+      }
       const res = await fetch("http://localhost:5000/gotofavourites", {
         method: "POST",
         headers: {
@@ -58,21 +61,22 @@ const Favourites = () => {
       });
       const data = await res.json();
       console.log(data);
-      if (data.length == 0) {
+      if (data.length == 0 && email) {
         alert("No vehicles added to favourites...");
+        navigate("/home1");
         return;
       }
-      
 
-      data.forEach((e1) =>
-        menuData.forEach((e2) => {
-          if (e1 == e2.id) {
-            result.push(e2);
-          }
-        })
-      );
-
-      setFavs(result); 
+      if (data) {
+        data.forEach((e1) =>
+          menuData.forEach((e2) => {
+            if (e1 == e2.id) {
+              result.push(e2);
+            }
+          })
+        );
+      }
+      setFavs(result);
     };
     showFav();
   }, []);
@@ -91,7 +95,6 @@ const Favourites = () => {
                         <strong>{curElem.name}</strong>
                       </h2>
                       <span className="card-description subtle">
-                        {/* {curElem.description} <br /> */}
                         Category: {curElem.category} <br />
                         Price: ₹{curElem.price} <br />
                         Range: {curElem.range} <br />
@@ -102,7 +105,6 @@ const Favourites = () => {
                       >
                         Read More
                       </button>
-                      {/* <div className="card-read"> <a href="#">More</a>onClick={e=>handleDetails(e,curElem)} </div> */}
                     </div>
                     <br />
                     <img

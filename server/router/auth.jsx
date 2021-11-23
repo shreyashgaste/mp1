@@ -101,7 +101,7 @@ router.post("/gotofavourites", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  res.json({message: "Something Wrong"});
+  res.json([]);
 });
 
 router.post("/contact", async (req, res) => {

@@ -1,5 +1,5 @@
-import React, { useEffect,useState } from "react";
-import { useNavigate,useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Menu from "./MenuApi";
 import RatingPage from "./RatingPage";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -11,9 +11,10 @@ const Navbar1 = () => {
       <header>
         <div class="topnav" id="myTopnav">
           <a href="/home1">Home</a>
-
           <a href="/compare">Compare</a>
-          <a href="/feature" class="active">Feature</a>
+          <a href="/feature" class="active">
+            Feature
+          </a>
           <a href="/logout">Logout</a>
         </div>
       </header>
@@ -35,9 +36,13 @@ const Feature = () => {
     }
   }
 
-  useEffect(()=>{
-    const makeFav=async()=>{
+  useEffect(() => {
+    const makeFav = async () => {
       const email = await sessionStorage.getItem("userEmail");
+      if(!email)
+      {
+        history("/");
+      }
       const res = await fetch("http://localhost:5000/checkfavourites", {
         method: "POST",
         headers: {
@@ -49,20 +54,18 @@ const Feature = () => {
           email,
         }),
       });
-  
+
       const data = await res.json();
-      console.log("He",data.effect);
-      if(data.effect == 1)
-      {
+      console.log("He", data.effect);
+      if (data.effect == 1) {
         setFav(true);
       }
-      if(data.effect == 0)
-      {
+      if (data.effect == 0) {
         setFav(false);
       }
-    }
+    };
     makeFav();
-  }, [])
+  }, []);
   const addToFavourite = async (e) => {
     const email = await sessionStorage.getItem("userEmail");
     const res = await fetch("http://localhost:5000/favourites", {
@@ -78,12 +81,10 @@ const Feature = () => {
 
     const data = await res.json();
     console.log(data.effect);
-    if(data.effect == 1)
-    {
+    if (data.effect == 1) {
       setFav(false);
     }
-    if(data.effect == 0)
-    {
+    if (data.effect == 0) {
       setFav(true);
     }
   };
@@ -93,35 +94,26 @@ const Feature = () => {
       <Navbar1 />
 
       <div className="feature-wrapper">
-        <h1 align="center">{curElem.name} <span  className="customSpan">{fav ? <button className="customButton"
-          onClick={(e) => addToFavourite(e)}
-        >
-          🧡
-        </button> : <button className="customButton"
-          onClick={(e) => addToFavourite(e)}
-        >
-          🤍
-        </button>}</span></h1>
-        {/* <div
-            className="gallery js-flickity"
-            data-flickity-options='{ "wrapAround": true }'
-          >
-            <div className="gallery-cell">
-              <img src={curElem.image1} alt="" />
-            </div>
-            <div className="gallery-cell">
-              <img src={curElem.image2} alt="" />
-            </div>
-            <div className="gallery-cell">
-              <img src={curElem.image3} alt="" />
-            </div>
-            <div className="gallery-cell">
-              <img src={curElem.image4} alt="" />
-            </div>
-            <div className="gallery-cell">
-              <img src={curElem.image5} alt="" />
-            </div>
-          </div> */}
+        <h1 align="center">
+          {curElem.name}{" "}
+          <span className="customSpan">
+            {fav ? (
+              <button
+                className="customButton"
+                onClick={(e) => addToFavourite(e)}
+              >
+                🧡
+              </button>
+            ) : (
+              <button
+                className="customButton"
+                onClick={(e) => addToFavourite(e)}
+              >
+                🤍
+              </button>
+            )}
+          </span>
+        </h1>
         <div className="carousal-wrapper">
           <Carousel useKeyboardArrows autoPlay>
             <div>
@@ -142,7 +134,6 @@ const Feature = () => {
           </Carousel>
         </div>
         <h4 align="center">Vehicle Specifications</h4>
-        {/* <h4 id='title'>React Dynamic Table</h4> */}
         <table id="students">
           <tbody>
             <tr>
@@ -205,7 +196,6 @@ const Feature = () => {
               <td>Description</td>
               <td>{curElem.description}</td>
             </tr>
-            {/* <tr><td>Category</td><td>{curElem.category}</td></tr> */}
           </tbody>
         </table>
       </div>

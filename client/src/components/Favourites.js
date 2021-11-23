@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Redirect, useParams } from "react-router-dom";
 import Menu from "./MenuApi";
-// import Feature from './feature';
-// import "../css/style.css";
+
+const Navbar1 = () => {
+  return (
+    <>
+      <header>
+        <div class="topnav" id="myTopnav">
+          <a href="/home1">Home</a>
+          <a href="/compare">Compare</a>
+          <a href="/favourites" class="active">
+            Favourites
+          </a>
+          <a href="/logout">Logout</a>
+        </div>
+        <div>
+          <h1 className="head-title">
+            <i className="fas fa-bolt"></i>{" "}
+            <b>
+              <i>My EV</i>
+            </b>
+          </h1>
+        </div>
+      </header>
+    </>
+  );
+};
 const Favourites = () => {
   const [menuData, setMenuData] = useState(Menu);
   const [result, setResult] = useState([]);
-  // const handleDetails = async (e,curElem) => {
-  //     e.preventDefault();
 
-  //     // const featureString = `/feature/${curElem.id}`;
-  //     history.push(`/feature/${curElem.id}`);}
-
-  // console.log(menuData);
   const [favs, setFavs] = useState([""]);
   let navigate = useNavigate();
-  
 
   const handleElement = (e, curElem) => {
     e.preventDefault();
@@ -24,8 +40,7 @@ const Favourites = () => {
       alert("Please Log In First...");
       return;
     }
-    console.log("Shreyash");
-    // console.log(curElem);
+
     navigate(`/feature/${curElem.id}`);
   };
   useEffect(() => {
@@ -47,8 +62,7 @@ const Favourites = () => {
         alert("No vehicles added to favourites...");
         return;
       }
-    //   console.log(data.message) ;
-    //   alert(data.message);
+      
 
       data.forEach((e1) =>
         menuData.forEach((e2) => {
@@ -58,12 +72,13 @@ const Favourites = () => {
         })
       );
 
-      setFavs(result); // Can also use filter(item => item);
+      setFavs(result); 
     };
     showFav();
   }, []);
   return (
     <>
+      <Navbar1 />
       <section className="main-card--cointainer">
         {favs.map((curElem) => {
           return (

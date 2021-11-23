@@ -25,7 +25,7 @@ const Logout = () =>{
         })
         await sessionStorage.clear();
         await sessionStorage.removeItem("userEmail");
-        history('/',{replace:true});
+        history('/',{replace:false});
         };
         makeLogout();
     }, []);

@@ -25,6 +25,7 @@ const About = () => {
   const history = useNavigate();
   // const initialData = {name:"Dattatray",phone:"9325924492",email:"dattareve@gmail"};
 
+ 
   return (
     <>
       <Navbar1 />
@@ -47,7 +48,12 @@ const About = () => {
               <b>Email: </b>
               <i> {sessionStorage.getItem("phone")}</i>
               <br />
+              
             </form>
+            <br />
+            <button className="card-read" onClick={(e) => history("/favourites/")}>
+                Show Favourites
+              </button>
           </div>
         </div>
         <form />

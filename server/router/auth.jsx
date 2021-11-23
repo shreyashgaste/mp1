@@ -87,6 +87,23 @@ router.post("/checkfavourites", async (req, res) => {
   res.json({message: "Updated"});
 });
 
+
+router.post("/gotofavourites", async (req, res) => {
+  const { email } = req.body;
+  console.log(email);
+  try {
+    const record = await User.findOne({ email: email});
+    console.log(record.favourited.length);
+    if(record.favourited.length != 0)
+    {
+      return res.json(record.favourited);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+  res.json({message: "Something Wrong"});
+});
+
 router.post("/contact", async (req, res) => {
   const { name, email, phone, message } = req.body;
 

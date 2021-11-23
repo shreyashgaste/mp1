@@ -41,6 +41,7 @@ const Feature = () => {
       const res = await fetch("http://localhost:5000/checkfavourites", {
         method: "POST",
         headers: {
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -227,18 +228,6 @@ const Feature = () => {
       <br />
       <h2 style={{ textAlign: "center" }}>Rate this vehicle...</h2>
       <RatingPage vehicleId={id} />
-      <div style={{textAlign: "center"}}>
-        {fav ? <button className="customButton"
-          onClick={(e) => addToFavourite(e)}
-        >
-          🧡
-        </button> : <button className="customButton"
-          onClick={(e) => addToFavourite(e)}
-        >
-          🤍
-        </button>}
-        
-      </div>
     </>
   );
 };

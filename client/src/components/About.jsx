@@ -49,10 +49,10 @@ const About = () => {
               <b>Name: </b>
               <i> {sessionStorage.getItem("name")}</i>
               <br />
-              <b>Phone: </b>
+              <b>Email: </b>
               <i> {sessionStorage.getItem("userEmail")}</i>
               <br />
-              <b>Email: </b>
+              <b>Phone: </b>
               <i> {sessionStorage.getItem("phone")}</i>
               <br />
             </form>
